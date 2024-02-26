@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6aw8wiilro5c"]
+
+[ext_resource type="PackedScene" uid="uid://dwuvdy2leo5be" path="res://platforms.tscn" id="1_kh5la"]
+[ext_resource type="PackedScene" uid="uid://dleekipm3iip" path="res://player.tscn" id="2_8ekch"]
+
+[node name="level" type="Node2D"]
+
+[node name="ground" type="StaticBody2D" parent="."]
+position = Vector2(2.08165e-12, 500)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ground"]
+position = Vector2(-32, 6272)
+polygon = PackedVector2Array(0, 0, 0, 1024, 6176, 1024, 6144, 32)
+
+[node name="Polygon2D" type="Polygon2D" parent="ground"]
+position = Vector2(-2520, -428)
+polygon = PackedVector2Array(2528, 512, 2528, 448, 2528, 640, 3680, 640, 3680, 512)
+
+[node name="Node2D" type="Node2D" parent="ground"]
+
+[node name="platforms" parent="ground" instance=ExtResource("1_kh5la")]
+position = Vector2(-17, -543)
+
+[node name="player" parent="ground" instance=ExtResource("2_8ekch")]
+position = Vector2(64, -76)
+motion_mode = 1
+up_direction = Vector2(2.08165e-12, -1)
+slide_on_ceiling = false
+script = null

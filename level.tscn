@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctphk83bx8i0j"]
+
+[ext_resource type="PackedScene" uid="uid://dwuvdy2leo5be" path="res://platforms.tscn" id="2_nimvh"]
+
+[node name="level" type="Node2D"]
+
+[node name="ground" type="StaticBody2D" parent="."]
+position = Vector2(2.08165e-12, 500)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ground"]
+position = Vector2(-32, 6272)
+polygon = PackedVector2Array(0, 0, 0, 1024, 6176, 1024, 6144, 32)
+
+[node name="Polygon2D" type="Polygon2D" parent="ground"]
+position = Vector2(-2520, -454.667)
+scale = Vector2(1, 1.04167)
+polygon = PackedVector2Array(2528, 512, 2528, 448, 2528, 640, 3680, 640, 3680, 512)
+
+[node name="platforms" parent="ground" instance=ExtResource("2_nimvh")]
+position = Vector2(-2520, -454.667)
+scale = Vector2(1, 1.04167)
